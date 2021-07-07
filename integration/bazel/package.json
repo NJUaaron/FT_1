@@ -1,0 +1,13 @@
+{
+  "name": "angular-bazel",
+  "description": "example and integration test for building Angular apps with Bazel",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "scripts": {
+    "//": "deps are listed in src/package.json which is used by yarn_install",
+    "//": "this package.json file is only here so that `yarn test` can be called by /integration/run_tests.sh",
+    "test": "bazel build ... --noshow_progress && bazel test ..."
+  }
+}
