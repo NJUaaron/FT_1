@@ -26,6 +26,7 @@ jobs:
 
       - name:  before install
         run: |
+          apt update && apt install sudo
           source ./scripts/ci/env.sh print
 
       - name: install
