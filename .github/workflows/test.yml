@@ -31,8 +31,7 @@ jobs:
 
       - name: install
         run: |
-          su 
-          ./scripts/ci/install.sh
+          sudo ./scripts/ci/install.sh
       
       - name: Build and Test
         run: | 
