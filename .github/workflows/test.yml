@@ -1,0 +1,43 @@
+name: My Test
+
+on:
+  push
+    # Sequence of patterns matched against refs/tags
+    #tags:
+      #- 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env:
+      
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 10.9.0
+        uses: actions/setup-node@v2
+        with:
+          node-version: 10.9.0
+
+      # - name: Update npm
+      #   if: ${{ steps.check_npm.outputs.OUTPUT }} != 5.7*
+      #   run: |
+      #     npm install -g npm@'>=5.7.1'
+
+      - name:  before install
+        run: |
+          source ./scripts/ci/env.sh print
+
+      - name: install
+        run: | 
+          ./scripts/ci/install.sh
+      
+      - name: Build and Test
+        run: | 
+          ./scripts/ci/build.sh
+          ./scripts/ci/test.sh
+
+          
+    
