@@ -29,8 +29,9 @@ jobs:
           source ./scripts/ci/env.sh print
 
       - name: install
-        run: | 
-          sudo ./scripts/ci/install.sh
+        run: |
+          su 
+          ./scripts/ci/install.sh
       
       - name: Build and Test
         run: | 
