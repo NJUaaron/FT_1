@@ -30,7 +30,7 @@ jobs:
 
       - name: install
         run: |
-          sudo scripts/ci/install.sh
+          sudo bash scripts/ci/install.sh
       
       - name: Build and Test
         run: | 
