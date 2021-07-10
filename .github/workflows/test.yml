@@ -30,7 +30,7 @@ jobs:
 
       - name: install
         run: |
-          ./scripts/ci/install.sh
+          chmod=+x ./scripts/ci/install.sh
       
       - name: Build and Test
         run: | 
