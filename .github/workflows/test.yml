@@ -24,12 +24,9 @@ jobs:
       #   run: |
       #     npm install -g npm@'>=5.7.1'
 
-      - name:  before install
-        run: |
-          source ./scripts/ci/env.sh print
-
       - name: install
         run: |
+          source ./scripts/ci/env.sh print
           chmod +x scripts/ci/install.sh
           ./scripts/ci/install.sh
       
