@@ -30,9 +30,7 @@ jobs:
 
       - name: install
         run: |
-          pwd
-          sudo pwd
-          sudo ./scripts/ci/install.sh
+          sudo scripts/ci/install.sh
       
       - name: Build and Test
         run: | 
