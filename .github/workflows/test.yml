@@ -26,11 +26,12 @@ jobs:
 
       - name:  before install
         run: |
-          sudo apt install vim
           source ./scripts/ci/env.sh print
 
       - name: install
         run: |
+          pwd
+          sudo pwd
           sudo ./scripts/ci/install.sh
       
       - name: Build and Test
