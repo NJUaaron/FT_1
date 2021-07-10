@@ -23,16 +23,21 @@ jobs:
       #   if: ${{ steps.check_npm.outputs.OUTPUT }} != 5.7*
       #   run: |
       #     npm install -g npm@'>=5.7.1'
+      - name: Give permission
+        run: |
+          chmod +x scripts/ci/install.sh
+          chmod +x scripts/ci/build.sh
+          chmod +x scripts/ci/test.sh
 
-      - name: install
+      - name: Install
         run: |
           source ./scripts/ci/env.sh print
-          chmod +x scripts/ci/install.sh
+          ./scripts/ci/install.sh
       
       - name: Build and Test
         run: | 
-          chmod +x scripts/ci/build.sh
-          chmod +x scripts/ci/test.sh
+          ./scripts/ci/build.sh
+          ./scripts/ci/test.sh
 
           
     
