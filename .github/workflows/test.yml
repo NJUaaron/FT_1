@@ -33,6 +33,7 @@ jobs:
         run: |
           source ./scripts/ci/env.sh print
           ./scripts/ci/install.sh
+          npm install @angular/{common,compiler,compiler-cli,core,forms,http,platform-browser,platform-browser-dynamic,platform-server,router,animations}@next --save
       
       - name: Build and Test
         run: | 
